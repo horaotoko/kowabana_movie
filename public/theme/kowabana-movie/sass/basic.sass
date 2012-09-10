@@ -1,6 +1,6 @@
 @charset "UTF-8"
 
-$black: #000 + 68
+$black: #000 + 30
 $white: #ffffff
 $max-width: 1200px
 $button_color: $black + 119
@@ -8,38 +8,42 @@ $button_color_hover: $button_color - 80
 
 body
   background-color: $black +156
-  background-image: url("#{$img_path}body.gif")
-  color: $black
+  +background-image(url("#{$img_path}back.png"))
+  color: #e3d5d5
   font: 
     family: 'ヒラギノ明朝 Pro W3','Hiragino Mincho Pro','ＭＳ Ｐ明朝','MS PMincho',serif
+  width: 767px
+  margin : auto
 #header
-  +background(url("#{$img_path}header.png"))
-  padding: 20px 0
+  padding: 20px 0 0
   margin: 0 0 50px 0
+  +background( url("#{$img_path}headfoot.png"))
   +clearfix
   .inner
     max-width: $max-width
     margin: 0 auto
-    .title
-      float: left
+    text-align: center
     nav
-      float: left
-      padding: 16px 0 0 40px
+      margin: 20px 0 0 0
       ul
         +horizontal-list-container
         margin: -10px 0 0 0
         li
           +horizontal-list-item
-          padding: 10px 6px
+          background-color: #7d3e3e
+          +background-image( url("#{$img_path}png.png"))
           a
+            border: solid 5px $black
             font: 
-              family: 'Podkova', serif
+              family: serif
               size: $size-20px
+            width: 158px
             text:
               decoration: none 
+              shadow: 1px 1px #444
             display: block
-            padding: 0 12px
-            color: $black
+            padding: 21px 12px
+            color: #e3d5d5
             &:link,
             &:visited
               background: none
@@ -48,6 +52,7 @@ body
               background-color: rgba(255, 255, 255, .4)
               +ie8-alpha(44,ffffff)
               +box-shadow(rgba(0, 0, 0, .2) 0 1px 2px)
+            float: left
           &.search
             margin: 0 0 0 20px
             position: relative
@@ -86,11 +91,12 @@ body
   h1
     a
       font: 
-        family: 'Podkova', serif
-        size: 40px
+        //family: 'Podkova', serif
+        size: 70px
       text:
-        decoration: none 
-      color: $black
+        decoration: none
+        //shadow: 0px 0px 30px #fff 
+      color: #7d3e3e
 #main
   width: 640px
   margin: 0 auto
@@ -205,6 +211,7 @@ section.comments
 
 #footer
   text-align: center
+  +background( url("#{$img_path}headfoot.png"))
   padding: 30px 0
   a
     color: $black

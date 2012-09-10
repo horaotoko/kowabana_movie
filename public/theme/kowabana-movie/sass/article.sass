@@ -1,38 +1,29 @@
 @charset "UTF-8"
 
 article
-  +background($white)
-  +box-shadow(rgba(0, 0, 0, .3) 0 1px 2px)
-  +ie-shadow("888888", 2, 180)
   position: relative
   margin: 0 0 50px 0
-  .date
-    $circle-size: 80px
-    $circle-padding: 13px
-    text-align: center
-    +background($black)
-    width: $circle-size
-    height: $circle-size - $circle-padding * 2
-    padding: $circle-padding 0
-    +border-radius(40px)
-    position: absolute
-    left: -90px
-    top: 0
-    li
-      display: block
-      color: $white
-      &.month
-        font: 
-          size: $size-14px
-        line-height: 14px
-      &.day
-        font: 
-          size: $size-18px
-        line-height: 26px
-      &.year
-        font: 
-          size: $size-12px
-        line-height: 12px
+  .info
+    float: right
+    margin: 20px 0
+    ul
+      +horizontal-list-container
+      li
+        +horizontal-list-item
+        display: block
+        color: $white
+        &.month
+          font: 
+            size: $size-14px
+          line-height: 1.0
+        &.day
+          font: 
+            size: $size-14px
+          line-height: 1.0
+        &.year
+          font: 
+            size: $size-14px
+          line-height: 1.0
   .category
     width: 110px
     position: absolute
@@ -48,12 +39,12 @@ article
       margin: 0 0 10px 0
       &:link,
       &:visited
-        color: #999
+        color: #fff
         +background(rgba(255, 255, 255, .4))
         +ie8-alpha(44,ffffff)
       &:hover,
       &:active
-        color: $black
+        color: $white
         +background(rgba(255, 255, 255, .8))
         +ie8-alpha(cc,ffffff)
         +box-shadow(rgba(0, 0, 0, .2) 0 1px 2px)
@@ -73,12 +64,12 @@ article
         margin: 0 0 10px 0
         &:link,
         &:visited
-          color: #999
+          color: $white
           +background(rgba(255, 255, 255, .4))
           +ie8-alpha(44,ffffff)
         &:hover,
         &:active
-          color: $black
+          color: $white
           +background(rgba(255, 255, 255, .8))
           +ie8-alpha(cc,ffffff)
           +box-shadow(rgba(0, 0, 0, .2) 0 1px 2px)
@@ -108,13 +99,13 @@ article
         +ie8-alpha(cc,ffffff)
         +box-shadow(rgba(0, 0, 0, .2) 0 1px 2px)
   header
-    padding: 20px 36px 0
+    //padding: 20px 36px 0
     h1
       font: 
         size: 32px
       line-height: 1.3
       a
-        color: $black
+        color: #E3D5D5
         text:
           decoration: none
   .body

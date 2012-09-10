@@ -4,18 +4,18 @@
       %li.month= @entry.created_at.strftime("%b")
       %li.day= @entry.created_at.day
       %li.year= @entry.created_at.year
-    - unless @entry.category.nil?
-      %p.category
-        %a{:href => url(@entry.category.link)}= @entry.category.title
-    - unless @entry.tags.size.zero?
-      = @post.tags_to_html
-    - if logged_in?
-      .edit
-        %a{:href => url(@entry.edit_link)}= t('edit')
   %header
     %h1= @entry.title
   .body
-    = @entry.body
+    = @entry.body   
+  - unless @entry.category.nil?
+    %p.category
+      %a{:href => url(@entry.category.link)}= @entry.category.title
+  - unless @entry.tags.size.zero?
+    = @post.tags_to_html
+  - if logged_in?
+    .edit
+      %a{:href => url(@entry.edit_link)}= t('edit')
 - unless page?
   %section.comments
     %h1.comment Comments
